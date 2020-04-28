@@ -1,0 +1,72 @@
+.title {
+  margin-bottom: 20px;
+  text-transform: none;
+}
+
+.nav-item.is-active {
+  color: #00d1b2 !important;
+}
+
+.nav-item .control.has-addons button .icon {
+  margin-left: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.content a.tag.is-dark:not(.button):visited {
+  color: whitesmoke;
+}
+
+.notify {
+  position: fixed;
+  z-index: 999;
+  top: 70px;
+  right: 20px;
+}
+
+.comic {
+  max-width: 183px !important;
+}
+.comic img {
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.login-form {
+  margin: 0 auto;
+  padding-bottom: 200px;
+  width: 320px;
+}
+
+.login-form .login-btn {
+  width: 100%;
+}
+
+.image-small {
+  width: 120px;
+}
+
+.comic-controls {
+  margin-top: 120px;
+}
+
+/* Pagination */
+.pagination a,
+.pagination .disabled,
+.pagination .active {
+  min-height: 2em;
+  min-width: 32px;
+  padding: 3px 8px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  box-shadow: none;
+}
+.pagination .active {
+  background-color: #00d1b2;
+}
+.pagination .active span {
+  color: white;
+}
