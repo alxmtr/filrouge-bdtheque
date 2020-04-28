@@ -1,27 +1,60 @@
-# Laravel PHP Framework
+# Projet Fil Rouge - Bédéthèque PHP
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Code d'un projet réalisé lors de ma formation de Développeur Logiciel à l'AFPA en 2016-2017, retrouvé au fond d'un disque dur.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+### Description du projet
 
-## Official Documentation
+L'objectif de ce projet était de créer un site web pour cataloguer des bandes dessinées à partir d'une base de données existante (fichier dump SQL `BDTheque.sql`).
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Maitrisant déjà PHP à l'époque et commençant à découvrir [Laravel](https://laravel.com), j'avais choisi de me lancer un peu plus dans le framework et de l'utiliser pour réaliser ce projet.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+### Mise en page du site
 
-## Security Vulnerabilities
+Pour réaliser la mise en page je me suis tourné vers [Bulma](https://bulma.io), un framework CSS basé sur Flexbox. 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Bulma contient tous les élements dont j'avais besoin (boutons, menu, pagination...) et m'a permis de gagner du temps tout en réalisant une mise en page simple et moderne.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+### Interface d'administration
+
+Une interface était demandée pour ce projet et est disponible avec le chemin `/admin` dans l'URL.
+
+Cette interface permet de gérer les BD et commentaires ainsi que d'ajouter des thèmes et des auteurs.
+
+L'identifiant pour s'y connecter est `admin` et le mot de passe est `afpa`.
+
+
+### Installation du projet
+
+Ce projet utilise [Laravel](https://laravel.com) dans sa version **5.2** et requiert PHP version **5.5.9** ou supérieure, ainsi qu'un serveur MySQL.
+
+- Cloner ce répertoire
+    ```
+    git clone https://github.com/alxmtr/filrouge-bdtheque.git
+    cd filrouge-bdtheque
+    ```
+
+- Installer les dépendances avec [Composer](https://getcomposer.org)
+    ```
+    composer install
+    ```
+    
+- Copier et éditer le fichier `.env` en y ajoutant vos identifiants de base de données
+
+    ```
+    cp .env.example .env
+    ```
+    
+- Génerer une nouvelle clé application pour Laravel
+    ```
+    php artisan key:generate
+    ```
+    
+- Lancer le serveur
+    ```
+    php artisan serve
+    ```
+    
+Ne pas oublier d'executer le fichier SQL `BDTheque.sql` dans une base de données.
