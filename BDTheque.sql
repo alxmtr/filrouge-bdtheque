@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `admins`
 --
 
-CREATE TABLE `admins` (
+CREATE TABLE IF NOT EXISTS `admins` (
   `id` int(10) UNSIGNED NOT NULL,
   `login` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -46,7 +46,7 @@ INSERT INTO `admins` (`id`, `login`, `remember_token`, `password`) VALUES
 -- Structure de la table `auteurs`
 --
 
-CREATE TABLE `auteurs` (
+CREATE TABLE IF NOT EXISTS `auteurs` (
   `aut_id` int(11) NOT NULL,
   `aut_nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -79,7 +79,7 @@ INSERT INTO `auteurs` (`aut_id`, `aut_nom`) VALUES
 -- Structure de la table `bandesdessinees`
 --
 
-CREATE TABLE `bandesdessinees` (
+CREATE TABLE IF NOT EXISTS `bandesdessinees` (
   `bd_id` int(11) NOT NULL,
   `bd_titre` varchar(255) NOT NULL,
   `bd_resume` text NOT NULL,
@@ -111,7 +111,7 @@ INSERT INTO `bandesdessinees` (`bd_id`, `bd_titre`, `bd_resume`, `bd_image`, `bd
 -- Structure de la table `commentaires`
 --
 
-CREATE TABLE `commentaires` (
+CREATE TABLE IF NOT EXISTS `commentaires` (
   `com_id` int(11) NOT NULL,
   `com_bd_id` int(11) NOT NULL,
   `com_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -136,7 +136,7 @@ INSERT INTO `commentaires` (`com_id`, `com_bd_id`, `com_date`, `com_auteur`, `co
 -- Structure de la table `liens_bd_themes`
 --
 
-CREATE TABLE `liens_bd_themes` (
+CREATE TABLE IF NOT EXISTS `liens_bd_themes` (
   `lien_bd_id` int(11) NOT NULL,
   `lien_themes_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -172,7 +172,7 @@ INSERT INTO `liens_bd_themes` (`lien_bd_id`, `lien_themes_id`) VALUES
 -- Structure de la table `migrations`
 --
 
-CREATE TABLE `migrations` (
+CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -190,7 +190,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 -- Structure de la table `themes`
 --
 
-CREATE TABLE `themes` (
+CREATE TABLE IF NOT EXISTS `themes` (
   `th_id` int(11) NOT NULL,
   `th_intitule` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
